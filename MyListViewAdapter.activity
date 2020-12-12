@@ -1,0 +1,58 @@
+.java
+package com.example.listtest3;
+
+import android.content.ClipData;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.example.listtest3.R;
+
+import java.util.ArrayList;
+
+public class MyListViewAdapter extends BaseAdapter  {
+
+    ArrayList<Item> listViewItemList = new ArrayList<Item>();
+
+    @Override
+    public int getCount() {
+        return listViewItemList.size();
+    }
+
+    @Override
+    public Object getItem(int i) {
+        return listViewItemList.get(i);
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return i;
+    }
+
+    @Override
+    public View getView(int i, View view, ViewGroup viewGroup) {
+        //1.XML파일을 자바로 가져온다
+        //2. 화면의 각 항목에 리스트에 들어있던 값들을 세팅해준다.
+
+        Context ctxt = viewGroup.getContext();
+
+        LayoutInflater inflater = (LayoutInflater)ctxt.getSystemService(ctxt.LAYOUT_INFLATER_SERVICE);
+        view = inflater.inflate(R.layout.custom_item_layout,viewGroup,false);
+
+        ImageView icon = (ImageView)view.findViewById(R.id.imageView2);
+        TextView mainTitle = (TextView)view.findViewById(R.id.textView2);
+        TextView desc= (TextView)view.findViewById(R.id.textView3);
+
+        Item item = listViewItemList.get(i);
+        icon.setImageDrawable(item.getIcon());
+        mainTitle.setText(item.getMainTitle());
+        desc.setText(item.getDesc());
+
+        return view;
+    }
+}
+
