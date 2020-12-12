@@ -1,0 +1,94 @@
+.java
+package com.example.listtest3;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity {
+    ListView listView;
+    ArrayList<String> mid;
+    Button btnInsert,btnDelete;
+    EditText etTest;
+    ArrayList<Integer> selected_index;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main);
+//
+//        listView=(ListView)findViewById(R.id.listView);
+//        btnDelete=(Button)findViewById(R.id.btn_delete);
+//        btnInsert=(Button)findViewById(R.id.btn_insert);
+//        etTest=(EditText)findViewById(R.id.et_test);
+//
+//        mid = new ArrayList<>();
+//        mid.add("24시");
+//        mid.add("워킹데드");
+//        mid.add("히어로즈");
+//        mid.add("프렌즈");
+//        mid.add("스몰빌");
+//
+//        selected_index=new ArrayList<Integer>();
+//
+//        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_multiple_choice,mid);
+//        listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+//        listView.setAdapter(adapter);
+//
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                selected_index.get(i);
+//                Toast.makeText(getApplicationContext(), mid.get(i),Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//        btnInsert.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                mid.add(etTest.getText().toString());
+//                adapter.notifyDataSetChanged();
+//            }
+//        });
+//
+//        btnDelete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                for(int i=0; i<selected_index.size();i++){
+//                    Toast.makeText(getApplicationContext(),Integer.toString(selected_index.get(i)),Toast.LENGTH_SHORT).show();
+//                    mid.remove(selected_index.get(i));
+//                }
+//                adapter.notifyDataSetChanged();
+//            }
+//        });
+    }
+}
+
+
+
+.xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+
+</LinearLayout>
